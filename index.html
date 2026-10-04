@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Matheus Ferreira — Engenheiro de Software</title>
+<meta name="description" content="Sou o Matheus, engenheiro de software focado em backend, integrações via API e desenvolvimento assistido por IA." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Aplica o tema salvo (ou o do sistema) antes da primeira pintura, sem piscar -->
+<script>
+  (function () {
+    var root = document.documentElement, theme;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+    root.setAttribute("data-theme", theme);
+    root.classList.add("js");
+  })();
+</script>
+
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/flow-diagram.css" />
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#top" class="nav-logo">Matheus Ferreira</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#stack">Ferramentas</a></li>
+      <li><a href="#experiencia">Trajetória</a></li>
+      <li><a href="#contato" class="btn btn-primary btn-sm">Contato</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Idioma">
+        <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="theme-toggle" aria-label="Alternar tema claro/escuro">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-controls="nav-links" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Navegação lateral entre seções (desktop) -->
+<nav class="section-dots" aria-label="Seções da página">
+  <a href="#top" data-label="Início"></a>
+  <a href="#sobre" data-label="Sobre"></a>
+  <a href="#projetos" data-label="Projetos"></a>
+  <a href="#stack" data-label="Ferramentas"></a>
+  <a href="#experiencia" data-label="Trajetória"></a>
+  <a href="#contato" data-label="Contato"></a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="hero-status reveal"><span class="status-dot" aria-hidden="true"></span>Backend · Integrações · IA aplicada</p>
+
+      <h1 class="reveal" style="--d: 80ms">Oi, eu sou o Matheus.<br />Construo integrações e mantenho de pé sistemas que não podem parar.</h1>
+
+      <p class="hero-sub reveal" style="--d: 160ms">
+        Trabalho com backend, APIs e SQL desde 2021. Sou Líder de Suporte no Grupo Multilaser, onde hoje
+        atuo no apoio técnico e no desenvolvimento de soluções com IA.
+      </p>
+
+      <div class="hero-ctas reveal" style="--d: 240ms">
+        <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+        <a href="Curriculo_Matheus_Ferreira.pdf" class="btn btn-secondary" download>Baixar CV</a>
+        <a href="#contato" class="btn btn-ghost">Contato</a>
+      </div>
+
+      <ul class="social-links reveal" style="--d: 320ms">
+        <li>
+          <a href="https://www.linkedin.com/in/mabf/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/matheusabf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.57v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3"/></svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Imagem: coloque sua foto em assets/img/perfil.jpg (proporção 4:5) -->
+    <figure class="media media-portrait reveal" style="--d: 200ms" data-hint="Sua foto · 4:5 · assets/img/perfil.jpg">
+      <img src="assets/img/perfil.jpg" alt="Foto de Matheus Ferreira" />
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre">
+  <div class="container about-grid">
+    <div class="reveal">
+      <h2 class="section-title">Sobre mim</h2>
+      <dl class="facts">
+        <div><dt>Atualmente</dt><dd>Líder de Suporte · Grupo Multilaser</dd></div>
+        <div><dt>Base</dt><dd>São Paulo, SP</dd></div>
+        <div><dt>Formação</dt><dd>Tecnólogo em ADS · MBA em Eng. de Software na USP (em andamento)</dd></div>
+        <div><dt>Idiomas</dt><dd>Português nativo · Inglês intermediário (B1)</dd></div>
+      </dl>
+    </div>
+
+    <div class="prose reveal" style="--d: 100ms">
+      <p>
+        Comecei a programar profissionalmente em 2021, como assistente de desenvolvimento. De lá para cá
+        passei por projetos em PHP, SQL e integrações REST, até chegar à operação de plataformas de varejo
+        que rodam o tempo todo em produção. No Grupo Multilaser, como Líder de Suporte, liderei o time N1 e N2;
+        hoje atuo no apoio técnico e no desenvolvimento de soluções com IA.
+      </p>
+      <p>
+        O que mais me prende no backend é o que acontece <em>entre</em> os sistemas: a integração que falha
+        em silêncio, a rotina agendada que precisa aguentar ser executada duas vezes, a query que funciona
+        bem até o volume dobrar. Gosto dos problemas em que a resposta não está no primeiro log.
+      </p>
+      <p>
+        Meu jeito de trabalhar segue quase sempre a mesma ordem: entender o problema com quem sente ele no
+        dia a dia, chegar à causa-raiz e só então automatizar — de preferência para que o mesmo incidente
+        não volte. Com IA, a lógica é a mesma: escrevo a especificação antes do código (Spec-Driven
+        Development) para que o resultado seja previsível, não sorte. Estou aprofundando isso no MBA da USP.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJETOS ===== -->
+<section id="projetos">
+  <div class="container">
+    <h2 class="section-title reveal">Projetos</h2>
+    <p class="section-sub reveal" style="--d: 80ms">
+      Três problemas reais que resolvi, contados do jeito que aconteceram. São sistemas internos, por isso o
+      código não é público — mas posso detalhar a arquitetura de qualquer um deles numa conversa.
+    </p>
+
+    <div class="cases">
+
+      <article class="case reveal is-open">
+        <header class="case-head">
+          <div class="case-head-main">
+            <div class="badges">
+              <span class="badge badge-done">Concluído</span>
+              <span class="badge">Projeto interno</span>
+            </div>
+            <h3>Gestão do Jira: triagem automática, SLA e relatório diário</h3>
+            <p class="case-head-meta">Grupo Multilaser · Líder de Suporte</p>
+          </div>
+          <button type="button" class="case-toggle" aria-expanded="true" aria-controls="case-detail-1">
+            <span>Ocultar detalhes</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+        </header>
+
+        <div class="case-detail" id="case-detail-1"><div class="case-detail-inner">
+          <!-- Diagrama das duas automações (assets/js/flow-diagram.js) -->
+          <div class="flow" data-flow>
+
+            <div class="flow-lane" style="--n: 5">
+              <p class="flow-lane-title"><span>01</span> Triagem automática</p>
+              <div class="flow-body">
+                <div class="flow-track" aria-hidden="true"><span class="flow-pulse"></span></div>
+                <ol class="flow-steps">
+                  <li>
+                    <button type="button" class="flow-step" data-system="gas" style="--i: 0"
+                      data-desc="Um script em Google Apps Script varre o Jira periodicamente em busca de chamados sem responsável ou sem contato definido.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 0 1-13 5.1M4.5 12a7.5 7.5 0 0 1 13-5.1"/><path d="M17.5 3.5v3.6h-3.6M6.5 20.5v-3.6h3.6"/></svg></span>
+                      <span class="flow-name">Varredura</span>
+                      <span class="flow-sub">Apps Script · Jira</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="jira" style="--i: 1"
+                      data-desc="Faz a triagem do chamado com o usuário, completando responsável e contato.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
+                      <span class="flow-name">Triagem</span>
+                      <span class="flow-sub">com o usuário</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="sla" style="--i: 2"
+                      data-desc="Com a triagem concluída, o SLA de triagem é registrado como cumprido.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.2 2.4 2.4 4.6-4.9"/></svg></span>
+                      <span class="flow-name">SLA de triagem</span>
+                      <span class="flow-sub">cumprido</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="jira" style="--i: 3"
+                      data-desc="O chamado é encaminhado automaticamente para a fila de análise.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M4 13.5 6.5 5h11l2.5 8.5V19H4z"/><path d="M4 13.5h4.5l1 2h5l1-2H20"/></svg></span>
+                      <span class="flow-name">Fila de análise</span>
+                      <span class="flow-sub">automático</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="chat" style="--i: 4"
+                      data-desc="Avisa o time no Google Chat via webhook, com o chamado triado e encaminhado.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H10l-4 4v-4H5z"/></svg></span>
+                      <span class="flow-name">Avisa o time</span>
+                      <span class="flow-sub">Google Chat</span>
+                    </button>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="flow-lane">
+              <p class="flow-lane-title"><span>02</span> Relatório diário</p>
+              <div class="flow-body">
+                <div class="flow-track" aria-hidden="true"><span class="flow-pulse"></span></div>
+                <ol class="flow-steps">
+                  <li>
+                    <button type="button" class="flow-step" data-system="gas" style="--i: 0"
+                      data-desc="Um gatilho do Google Apps Script dispara a rotina sozinho, todo dia às 08h00.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+                      <span class="flow-name">Gatilho</span>
+                      <span class="flow-sub">Apps Script · 08h00</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="jira" style="--i: 1"
+                      data-desc="Busca os chamados aguardando retorno ou parados há mais de 3 dias sem movimentação.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16l-6 7.5V18l-4 2v-7.5z"/></svg></span>
+                      <span class="flow-name">Consulta</span>
+                      <span class="flow-sub">aguardando · parados &gt; 3d</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="gas" style="--i: 2"
+                      data-desc="Calcula há quantos dias cada chamado está parado e monta um resumo com o total.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M8.5 7 4 12l4.5 5M15.5 7 20 12l-4.5 5"/></svg></span>
+                      <span class="flow-name">Relatório</span>
+                      <span class="flow-sub">dias parados + total</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="chat" style="--i: 3"
+                      data-desc="Envia o relatório ao Google Chat do time via webhook, com link direto para cada chamado.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H10l-4 4v-4H5z"/></svg></span>
+                      <span class="flow-name">Avisa o time</span>
+                      <span class="flow-sub">Google Chat</span>
+                    </button>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <p class="flow-caption" aria-live="polite">Duas automações independentes sobre a mesma fila: uma garante que todo chamado tenha dono, a outra que nenhum fique esquecido.</p>
+          </div>
+
+          <div class="case-content">
+            <aside class="case-meta">
+              <p class="case-meta-label">Tecnologias</p>
+              <ul class="stack-inline"><li>Jira REST API</li><li>Google Apps Script</li><li>Google Chat Webhook</li></ul>
+            </aside>
+            <div class="case-body">
+              <h4>O desafio</h4>
+              <p>
+                Na fila do suporte, dois problemas se somavam. Chamados chegavam sem responsável ou sem contato
+                definido e ficavam parados até alguém notar, estourando o SLA de triagem. E os chamados aguardando retorno ou sem movimentação há dias simplesmente sumiam da vista do time.
+              </p>
+              <h4>A minha abordagem técnica</h4>
+              <p>
+                Resolvi com duas automações independentes em Google Apps Script, ambas integradas à REST API do Jira
+                e avisando o time por webhook no Google Chat. A primeira varre o Jira periodicamente, encontra
+                chamados sem responsável ou contato e faz a triagem com o usuário; com a triagem concluída, registra
+                o SLA de triagem como cumprido, encaminha o chamado para a fila de análise e notifica o time. A segunda
+                roda todo dia às 8h, levanta os chamados aguardando retorno ou parados há mais de 3 dias e envia um
+                relatório ao Chat, com link direto para cada um.
+              </p>
+              <h4>O resultado</h4>
+              <p>
+                Os chamados sem dono deixaram de existir, o SLA de triagem passou a ser cumprido de forma
+                consistente e o time começa o dia sabendo exatamente o que está parado.
+              </p>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="case reveal">
+        <header class="case-head">
+          <div class="case-head-main">
+            <div class="badges">
+              <span class="badge badge-done">Entregue</span>
+              <span class="badge">Projeto interno</span>
+            </div>
+            <h3>Módulo de envio e acompanhamento de assinatura digital</h3>
+            <p class="case-head-meta">MultidadosTI · Desenvolvedor Júnior</p>
+          </div>
+          <button type="button" class="case-toggle" aria-expanded="false" aria-controls="case-detail-2">
+            <span>Ver detalhes</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+        </header>
+
+        <div class="case-detail" id="case-detail-2"><div class="case-detail-inner">
+          <!-- Diagrama do módulo de assinatura digital (assets/js/flow-diagram.js) -->
+          <div class="flow" data-flow>
+
+            <div class="flow-lane" style="--n: 5">
+              <p class="flow-lane-title"><span>01</span> Fluxo do envio</p>
+              <div class="flow-body">
+                <div class="flow-track" aria-hidden="true"><span class="flow-pulse"></span></div>
+                <ol class="flow-steps">
+                  <li>
+                    <button type="button" class="flow-step" data-system="app" style="--i: 0"
+                      data-desc="Cada regra define um status de ativação pré-configurado para disparar o envio.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>
+                      <span class="flow-name">Regra</span>
+                      <span class="flow-sub">status de ativação</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="app" style="--i: 1"
+                      data-desc="Quando o chamado entra no status configurado, a regra é ativada.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+                      <span class="flow-name">Gatilho</span>
+                      <span class="flow-sub">chamado muda de status</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="api" style="--i: 2"
+                      data-desc="A integração envia o contrato ao provedor de assinatura digital via REST API.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M20.5 3.5 10 14M20.5 3.5 14 20.5l-4-6.5-6.5-4z"/></svg></span>
+                      <span class="flow-name">Envio</span>
+                      <span class="flow-sub">REST API do provedor</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="user" style="--i: 3"
+                      data-desc="O destinatário recebe, lê e assina o documento — cada ação muda o estado no provedor.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L9 19H5v-4z"/><path d="M4 21h16"/></svg></span>
+                      <span class="flow-name">Usuário</span>
+                      <span class="flow-sub">recebe · lê · assina</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="cron" style="--i: 4"
+                      data-desc="Um cronjob lê o provedor e grava o status atual de cada envio no módulo.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4.5v3.7h-3.7M12 8v4l2.5 1.5"/></svg></span>
+                      <span class="flow-name">Cronjob</span>
+                      <span class="flow-sub">atualiza o status</span>
+                    </button>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="flow-lane flow-lane--static" style="--n: 3">
+              <p class="flow-lane-title"><span>02</span> Telas de gestão</p>
+              <div class="flow-body">
+                <ol class="flow-steps">
+                  <li>
+                    <button type="button" class="flow-step" data-system="app"
+                      data-desc="Tela para definir em quais status do chamado cada envio deve ser ativado.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>
+                      <span class="flow-name">Status de ativação</span>
+                      <span class="flow-sub">configuração das regras</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="app"
+                      data-desc="Cadastro de campos adicionais que acompanham o envio do contrato.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h4M15 13v4M13 15h4"/></svg></span>
+                      <span class="flow-name">Campos adicionais</span>
+                      <span class="flow-sub">cadastro</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="api"
+                      data-desc="Lista todos os envios, mostra o andamento de cada assinatura e permite reprocessar o que falhou.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17M8 13h8M8 16h5"/></svg></span>
+                      <span class="flow-name">Painel de envios</span>
+                      <span class="flow-sub">acompanhamento · reprocessamento</span>
+                    </button>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <p class="flow-caption" aria-live="polite">Do status do chamado à assinatura: o envio dispara sozinho e o andamento fica sempre atualizado.</p>
+          </div>
+
+          <div class="case-content">
+            <aside class="case-meta">
+              <p class="case-meta-label">Tecnologias</p>
+              <ul class="stack-inline"><li>PHP</li><li>SQL</li><li>REST API</li><li>Cronjobs</li></ul>
+            </aside>
+            <div class="case-body">
+              <h4>O desafio</h4>
+              <p>
+                Os contratos enviados para assinatura digital eram acompanhados à mão: alguém conferia se cada
+                documento tinha sido entregue, lido e assinado. Quando algo falhava no caminho, ninguém ficava sabendo.
+              </p>
+              <h4>A minha abordagem técnica</h4>
+              <p>
+                Desenvolvi o módulo de ponta a ponta em PHP. O envio é disparado por regras: cada uma define um status
+                de ativação e, quando o chamado entra nele, a integração envia o contrato ao provedor via REST API.
+                A partir daí, um cronjob lê o provedor e atualiza o status de cada envio conforme o usuário recebe, lê
+                ou assina. Para o time, criei telas para configurar os status de ativação, cadastrar campos adicionais
+                e acompanhar os envios — com a opção de reprocessar o que falhou.
+              </p>
+              <h4>O resultado</h4>
+              <p>
+                Rastreabilidade de cada contrato, do envio à assinatura, sem ninguém conferir nada à mão. Quando algo
+                falha, o time vê no painel e reprocessa em um clique.
+              </p>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="case reveal">
+        <header class="case-head">
+          <div class="case-head-main">
+            <div class="badges">
+              <span class="badge badge-live">Em produção</span>
+              <span class="badge">Projeto interno</span>
+            </div>
+            <h3>Alertas em tempo real para pedidos com SLA estourado</h3>
+            <p class="case-head-meta">Grupo Multilaser · Analista → Líder de Suporte</p>
+          </div>
+          <button type="button" class="case-toggle" aria-expanded="false" aria-controls="case-detail-3">
+            <span>Ver detalhes</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+        </header>
+
+        <div class="case-detail" id="case-detail-3"><div class="case-detail-inner">
+          <!-- Diagrama dos alertas de pedidos (assets/js/flow-diagram.js) -->
+          <div class="flow" data-flow>
+
+            <div class="flow-lane">
+              <p class="flow-lane-title"><span>01</span> Fluxo do alerta</p>
+              <div class="flow-body">
+                <div class="flow-track" aria-hidden="true"><span class="flow-pulse"></span></div>
+                <ol class="flow-steps">
+                  <li>
+                    <button type="button" class="flow-step" data-system="app" style="--i: 0"
+                      data-desc="Consulta as listagens dos sistemas internos e separa os pedidos com SLA estourado.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></span>
+                      <span class="flow-name">Listagens internas</span>
+                      <span class="flow-sub">pedidos com SLA estourado</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="cron" style="--i: 1"
+                      data-desc="Para cada pedido, busca no banco do sistema interno o log de erro correspondente.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M5 6v12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></svg></span>
+                      <span class="flow-name">Log de erro</span>
+                      <span class="flow-sub">banco do sistema interno</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="api" style="--i: 2"
+                      data-desc="Junta link, dados do pedido, erro, tempo decorrido e SLA em uma única mensagem.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M8.5 7 4 12l4.5 5M15.5 7 20 12l-4.5 5"/></svg></span>
+                      <span class="flow-name">Monta o alerta</span>
+                      <span class="flow-sub">pedido + erro + SLA</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="chat" style="--i: 3"
+                      data-desc="Envia o alerta via webhook para um espaço no Google Chat do time.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H10l-4 4v-4H5z"/></svg></span>
+                      <span class="flow-name">Google Chat</span>
+                      <span class="flow-sub">espaço do time</span>
+                    </button>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="flow-lane flow-lane--static">
+              <p class="flow-lane-title"><span>02</span> O que chega no alerta</p>
+              <div class="flow-body">
+                <ol class="flow-steps">
+                  <li>
+                    <button type="button" class="flow-step" data-system="app"
+                      data-desc="Link direto para o pedido no sistema interno.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+                      <span class="flow-name">Link</span>
+                      <span class="flow-sub">acesso direto ao pedido</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="app"
+                      data-desc="As informações do pedido que importam para agir.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span>
+                      <span class="flow-name">Pedido</span>
+                      <span class="flow-sub">informações pertinentes</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="cron"
+                      data-desc="O erro registrado no log, para o time já começar pelo diagnóstico.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><path d="M12 4 21 19.5H3z"/><path d="M12 10v4M12 17h.01"/></svg></span>
+                      <span class="flow-name">Erro</span>
+                      <span class="flow-sub">mensagem do log</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="flow-step" data-system="sla"
+                      data-desc="Há quanto tempo o pedido está parado e qual era o SLA.">
+                      <span class="flow-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+                      <span class="flow-name">Tempo e SLA</span>
+                      <span class="flow-sub">quanto já passou</span>
+                    </button>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <p class="flow-caption" aria-live="polite">O time recebe o problema já diagnosticado: qual pedido, qual erro e há quanto tempo.</p>
+          </div>
+
+          <div class="case-content">
+            <aside class="case-meta">
+              <p class="case-meta-label">Tecnologias</p>
+              <ul class="stack-inline"><li>Python</li><li>SQL</li><li>Google Chat Webhook</li></ul>
+            </aside>
+            <div class="case-body">
+              <h4>O desafio</h4>
+              <p>
+                Pedidos com falha de integração estouravam o SLA sem ninguém perceber. Quando alguém notava, ainda
+                precisava caçar o erro no log, um pedido por vez — e nos fechamentos, quando cada hora conta, isso
+                pesava ainda mais.
+              </p>
+              <h4>A minha abordagem técnica</h4>
+              <p>
+                Montei uma automação que consulta as listagens dos sistemas internos e separa os pedidos com SLA
+                estourado. Para cada um, ela busca no banco do sistema interno o log de erro correspondente e envia
+                um alerta via webhook para um espaço no Google Chat, com o link do pedido, as informações
+                pertinentes, o erro registrado, o tempo decorrido e o SLA.
+              </p>
+              <h4>O resultado</h4>
+              <p>
+                O time passou a receber o problema já diagnosticado, em vez de garimpar log por log. As falhas
+                começaram a ser resolvidas dentro das janelas críticas, não depois delas.
+              </p>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FERRAMENTAS ===== -->
+<section id="stack">
+  <div class="container">
+    <h2 class="section-title reveal">Ferramentas &amp; competências</h2>
+    <p class="section-sub reveal" style="--d: 80ms">O que uso no dia a dia, agrupado por área.</p>
+
+    <div class="skills-grid">
+      <div class="skill-group skill-group--featured reveal">
+        <div class="skill-group-head">
+          <h3>IA aplicada ao desenvolvimento</h3>
+          <span class="badge badge-done">Foco atual</span>
+        </div>
+        <ul>
+          <li>Spec-Driven Development <span>— Spec Kit, especificação antes do código</span></li>
+          <li>Sistemas multi-agente <span>— orquestração de agentes e subagentes</span></li>
+          <li>Agent Skills <span>— instruções e fluxos reutilizáveis para agentes</span></li>
+          <li>MCP <span>— Model Context Protocol, conectando agentes a ferramentas</span></li>
+          <li>Agentes de código <span>— Claude Code, GitHub Copilot</span></li>
+          <li>Engenharia de prompt e de contexto</li>
+          <li>Revisão de código e testes assistidos por IA</li>
+          <li>Integração com APIs de LLM</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Linguagens &amp; frameworks</h3>
+        <ul>
+          <li>PHP <span>— módulos e integrações em produção</span></li>
+          <li>Python <span>— scripts de monitoramento e automação</span></li>
+          <li>Google Apps Script <span>— automações com Jira e Google Chat</span></li>
+          <li>JavaScript</li>
+          <li>Vue.js</li>
+          <li>React</li>
+          <li>.NET</li>
+          <li>HTML &amp; CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal" style="--d: 80ms">
+        <h3>Bancos de dados</h3>
+        <ul>
+          <li>SQL <span>— consultas complexas e diagnóstico</span></li>
+          <li>MySQL</li>
+          <li>Stored Procedures</li>
+          <li>MongoDB</li>
+          <li>Modelagem de dados</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Arquitetura &amp; integrações</h3>
+        <ul>
+          <li>REST APIs</li>
+          <li>Webhooks</li>
+          <li>Cronjobs e rotinas agendadas</li>
+          <li>Reprocessamento de falhas</li>
+          <li>XML · UML</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal" style="--d: 80ms">
+        <h3>Observabilidade &amp; infra</h3>
+        <ul>
+          <li>Análise de logs e causa-raiz</li>
+          <li>Alertas via webhook</li>
+          <li>AWS</li>
+          <li>Git</li>
+          <li>Jira · Confluence</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="practices reveal">
+      <strong>Como trabalho:</strong> Scrum e Kanban, especificação antes do código — com ou sem IA — e
+      documentação técnica como parte da entrega, não como etapa opcional.
+    </p>
+  </div>
+</section>
+
+<!-- ===== TRAJETÓRIA ===== -->
+<section id="experiencia">
+  <div class="container">
+    <h2 class="section-title reveal">Trajetória</h2>
+    <p class="section-sub reveal" style="--d: 80ms">Onde trabalhei e o que estudei.</p>
+
+    <div class="timeline-grid">
+      <div class="reveal">
+        <h3 class="col-title">Experiência</h3>
+        <ol class="timeline">
+          <li class="t-group">
+            <span class="t-date">03/2025 — atual</span>
+            <span class="t-company">Grupo Multilaser</span>
+            <ol class="t-roles">
+              <li><span class="t-role">Líder de Suporte</span><span class="t-role-date">11/2025 — atual</span></li>
+              <li><span class="t-role">Analista de Suporte a Sistemas Jr.</span><span class="t-role-date">03/2025 — 11/2025</span></li>
+            </ol>
+          </li>
+          <li class="t-group">
+            <span class="t-date">03/2024 — 03/2025</span>
+            <span class="t-company">MultidadosTI</span>
+            <ol class="t-roles">
+              <li><span class="t-role">Desenvolvedor Júnior</span><span class="t-role-date">01/2025 — 03/2025</span></li>
+              <li><span class="t-role">Estagiário de Desenvolvimento</span><span class="t-role-date">03/2024 — 01/2025</span></li>
+            </ol>
+          </li>
+          <li><span class="t-date">05/2023 — 03/2024</span><span class="t-role">Estagiário de TI</span><span class="t-org">Guiare — Manual do Proprietário</span></li>
+          <li><span class="t-date">05/2022 — 05/2023</span><span class="t-role">Desenvolvedor Júnior</span><span class="t-org">Ganep Educação</span></li>
+          <li><span class="t-date">05/2021 — 05/2022</span><span class="t-role">Assistente de Desenvolvimento de Software</span><span class="t-org">EB Treinamentos</span></li>
+        </ol>
+      </div>
+
+      <div class="reveal" style="--d: 100ms">
+        <h3 class="col-title">Formação</h3>
+        <ol class="timeline">
+          <li><span class="t-date">2026 — 2027</span><span class="t-role">MBA em Engenharia de Software</span><span class="t-org">USP · em andamento</span></li>
+          <li><span class="t-date">2023 — 2025</span><span class="t-role">Tecnólogo em Análise e Desenvolvimento de Sistemas</span><span class="t-org">Universidade Cruzeiro do Sul</span></li>
+          <li><span class="t-date">02/2019 — 12/2021</span><span class="t-role">Técnico em Desenvolvimento de Sistemas</span><span class="t-org">Etec da Zona Leste</span></li>
+        </ol>
+
+        <h3 class="col-title col-title-spaced">Cursos</h3>
+        <ul class="courses">
+          <li>Spec-Driven Development: Designing Deterministic AI Systems <span>Udemy</span></li>
+          <li>Trilha Praticando Python <span>Alura</span></li>
+          <li>React JS do Zero ao Avançado na Prática <span>Udemy</span></li>
+          <li>Vue JS — Curso Completo do Básico ao Avançado <span>Udemy</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== RODAPÉ ===== -->
+<footer class="footer" id="contato">
+  <div class="container">
+    <div class="footer-main reveal">
+      <div>
+        <h2>Vamos conversar?</h2>
+        <p>Quer trocar uma ideia sobre backend, integrações ou IA aplicada? Respondo por e-mail em até um dia útil.</p>
+      </div>
+      <a href="mailto:matheus.abentof@gmail.com" class="btn btn-primary">matheus.abentof@gmail.com</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Matheus Ferreira</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/mabf/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/matheusabf" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://wa.me/5511975507168" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/flow-diagram.js"></script>
+</body>
+</html>
